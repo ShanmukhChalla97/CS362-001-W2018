@@ -1,4 +1,5 @@
 
+
 /*
  * TimeTable.java
  *
@@ -38,6 +39,7 @@ public class TimeTable {
 	        //Make sure that the first day is before the last day
 	        if (!firstDay.before(lastDay)) {
 	        	throw new DateOutOfRangeException ("Second date specified is not  before the first date specified.");
+
 	        }
 	        
 	        
@@ -47,10 +49,9 @@ public class TimeTable {
 
 	            calDays.add(new CalDay(nextDay));
 	            nextDay.add(nextDay.DAY_OF_MONTH, 1);
-	        }
-	        
+	        }  
 	        //Retrieve the appts - <appt> 
-		for (int i = 0; i < appts.size(); i++) {
+		for (int i = appts.size(); i > 0; i--) {
 			Appt appt=appts.get(i);
 			if(!appt.getValid()) continue;
 			// Figure out which days the appointment occurs on
@@ -87,7 +88,7 @@ public class TimeTable {
 	     **/
 	    private static LinkedList<GregorianCalendar> getApptOccurences(Appt appt, 
 	        GregorianCalendar firstDay, GregorianCalendar lastDay) {
-	        
+
 	        LinkedList<GregorianCalendar> result = new LinkedList<GregorianCalendar>();
 	        
 	        //Make sure that the firstDay is before the last day
