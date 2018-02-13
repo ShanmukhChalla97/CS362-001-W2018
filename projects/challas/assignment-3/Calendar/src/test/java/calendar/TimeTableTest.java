@@ -100,16 +100,21 @@ public class TimeTableTest {
 
 	@Test
 	 public void test04()  throws Throwable  {
-		 //LinkedList<Appt> appts = new LinkedList<Appt>();
-		 //TimeTable timetable = new TimeTable();
+		LinkedList<Appt> appts = new LinkedList<Appt>();
+		GregorianCalendar today = new GregorianCalendar(2017, 11 ,28);
+		GregorianCalendar nextDay = new GregorianCalendar(2017, 11 , 29);
+		TimeTable timetable = new TimeTable();
 
-		 //Appt appt = new Appt(21, 30 , 12 , 02 , 2018 , "Homework", "Homework due");
+		Appt appt = new Appt(21, 30 , 28 , 11 , 2017 , "Homework", "Homework due");
 
-		 //int[] recurDays = {2, 4, 6};
-		 //assertFalse(recurDays.isEmpty());
+		int[] recurDays = null;
+		appt.setRecurrence(recurDays, 0, 0, Appt.RECUR_NUMBER_NEVER);
+		appts.add(appt);
 
-		 //assertNotNull(timetable.getApptRange(appts, firstDay, lastDay));
+		timetable.getApptRange(appts, today, nextDay);
+		assertEquals(1, timetable.getApptRange(appts, today, nextDay).size());
 
 	}
+
 //add more unit tests as you needed
 }

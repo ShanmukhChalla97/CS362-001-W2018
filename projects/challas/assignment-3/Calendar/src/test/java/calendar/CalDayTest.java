@@ -32,12 +32,13 @@ public class CalDayTest {
 	 }
 	 @Test
 	 public void test03()  throws Throwable  {
-		 	
+
 
 	 }
 
 	@Test
 	public void test04()  throws Throwable  {
+		CalDay testDay = new CalDay();
 		GregorianCalendar today = new GregorianCalendar(2017 , 11, 28);
 		CalDay calendarDay = new CalDay(today);
 		assertTrue(calendarDay.isValid());
@@ -68,6 +69,13 @@ public class CalDayTest {
 		invalid.toString();
 		assertNotNull(calendarDay.iterator());
 		assertNull(invalid.iterator());
+
+		calendarDay.toString();
+
+		assertNotEquals("", calendarDay.toString()); //if valid=true, the correct string with the date should be built
+		assertEquals("", testDay.toString()); //testing if valid=false to make sure the string isn't built in this case
+		assertNotEquals((" --- -------- Appointments ------------ --- \n"), calendarDay.toString()); //shouldn't just be part of what is appended to the overall string
+		assertNotEquals((" --- -------- Appointments ------------ --- \n"), testDay.toString());
 
 	}
 

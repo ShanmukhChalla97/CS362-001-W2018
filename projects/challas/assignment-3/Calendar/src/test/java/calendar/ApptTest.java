@@ -23,6 +23,14 @@ public class ApptTest {
 		 assertEquals("Homework", appt.getTitle());
 		 assertEquals("Homework due", appt.getDescription());
 
+		 int[] recurDays = {2, 5};
+ 	 	 appt.setRecurrence(recurDays, Appt.RECUR_BY_MONTHLY, 2, Appt.RECUR_NUMBER_FOREVER);
+
+		 assertEquals(2, appt.getRecurIncrement());
+ 	 	 assertTrue(appt.isRecurring());
+ 		 assertEquals(Appt.RECUR_BY_MONTHLY, appt.getRecurBy());
+ 	   assertEquals(Appt.RECUR_NUMBER_FOREVER, appt.getRecurNumber());
+
 		 appt.setStartHour(0);
 		 assertTrue(appt.getValid());
 
@@ -47,16 +55,15 @@ public class ApptTest {
 		 appt.setStartDay(31);
 		 assertTrue(appt.getValid());
 
-		 /*
-		 appt.setStartDay(12);
-		 assert(appt.getValid());
-
-		 appt.setStartHour(20);
+		 appt.setStartDay(300);
 		 assertFalse(appt.getValid());
 
-		 appt.setStartMonth(10);
+		 appt.setStartHour(12);
 		 assertFalse(appt.getValid());
-		 */
+
+		 appt.setStartMonth(05);
+		 assertFalse(appt.getValid());
+
 	 }
 
 	 @Test
@@ -113,6 +120,7 @@ public class ApptTest {
 
 	 public void test05()  throws Throwable  {
 			 Appt appt = new Appt(21, 30 , 28 , 11 , 2017 , "Homework", "Homework due");
+			 Appt appt2 = new Appt(21, 30 , 28 , 11 , 2017 , "Homework", "Homework due");
 
 			 appt.setStartHour(21);
 			 appt.setStartMinute(30);
