@@ -45,7 +45,6 @@ public class TimeTableTest {
 
 			int[] pv = {0,1};
 			assertNotNull(time.permute(appts, pv));
-
 	 }
 
 	 @Test

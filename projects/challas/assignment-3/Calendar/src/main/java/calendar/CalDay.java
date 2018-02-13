@@ -180,7 +180,7 @@ public class CalDay {
 		         sb.append(element + " ");
 		      }
 
-//			sb.append(this.appts);
+		//sb.append(this.appts);
 			sb.append("\n");
 		}
        	 return sb.toString();
