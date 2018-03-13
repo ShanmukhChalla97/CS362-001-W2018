@@ -1,0 +1,5 @@
+The first error that I found was in the isValid() function within Appt.java.
+This error was found on line 115, if(startHour<0 || startHour>30).
+
+The second error was found in the isLeapYear() function within CalendarUtil.java.
+This error was found on line 57, if ((year % 5) == 0). 
