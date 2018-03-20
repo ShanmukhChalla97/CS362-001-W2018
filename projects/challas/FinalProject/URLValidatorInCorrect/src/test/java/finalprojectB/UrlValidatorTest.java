@@ -48,11 +48,11 @@ public class UrlValidatorTest extends TestCase {
   	 //Using this functions to test authorities
      UrlValidator url = new UrlValidator(null,null, UrlValidator.ALLOW_ALL_SCHEMES);
 
-     assertTrue(url.isValid("http://www.google.edu"));
-     assertTrue(url.isValid("http://225.225.225.225"));
+     assertTrue(url.isValidAuthority("http://www.google.com"));
+     assertTrue(url.isValidAuthority("http://225.225.225.225"));
 
-     assertFalse(url.isValid("http://1.3.4.5"));
-     assertFalse(url.isValid(""));
+     assertFalse(url.isValidAuthority("http://1.3.4.5"));
+     assertFalse(url.isValidAuthority(""));
 
    }
 
@@ -83,7 +83,7 @@ public class UrlValidatorTest extends TestCase {
 
      //Test the schemes
      for (int i = 0; i < 7; i++){
-       if (i > 0 && i < 4){
+       if (i > 0 && i < 5){
           String testString = schemes[i] + "www.google.com";
           assertTrue(url.isValid(testString));
        }
@@ -95,7 +95,7 @@ public class UrlValidatorTest extends TestCase {
 
      //Test the authorities
      for (int j = 0; j < 7; j++){
-       if (j > 0 && j < 4){
+       if (j > 0 && j < 5){
           String testString = authorities[j];
           assertTrue(url.isValid(testString));
        }

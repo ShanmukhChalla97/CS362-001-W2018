@@ -1,9 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Calendar,finalprojectB,DomainValidator.ArrayType,89,0,0,0,9,0,2,0,2,0
-Calendar,finalprojectB,InetAddressValidator,245,0,64,0,64,0,38,0,6,0
-Calendar,finalprojectB,RegexValidator,208,50,36,6,44,12,25,4,4,4
-Calendar,finalprojectB,ResultPair,13,0,2,0,4,0,2,0,1,0
-Calendar,finalprojectB,DomainValidator.new Object() {...},61,0,0,0,1,0,1,0,1,0
-Calendar,finalprojectB,DomainValidator.IDNBUGHOLDER,10,0,0,0,3,0,2,0,2,0
-Calendar,finalprojectB,DomainValidator,361,6207,78,7,95,28,59,7,12,6
-Calendar,finalprojectB,UrlValidator,114,306,39,47,40,83,31,30,3,15
